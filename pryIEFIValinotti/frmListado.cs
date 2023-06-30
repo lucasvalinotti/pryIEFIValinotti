@@ -62,7 +62,10 @@ namespace pryIEFIValinotti
             List<Venta> filtro = new List<Venta>();
             for (int i = 0; i < listaVentas.Count; i++)
             {
-                if (listaVentas[i].Cantidad > int.Parse(txtBusqueda.Text)) filtro.Add(listaVentas[i]);
+                if (txtBusqueda.Text != "")
+                {
+                    if (listaVentas[i].Cantidad > int.Parse(txtBusqueda.Text)) filtro.Add(listaVentas[i]);
+                }
             }
             dgvListado.DataSource = filtro;
         }
